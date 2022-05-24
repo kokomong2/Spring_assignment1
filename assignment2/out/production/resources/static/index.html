@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Service</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="basic.js"></script>
+    <meta property="og:title" content="Timeline Service">
+    <meta property="og:description" content="사소한 메모라도 적어보세요!">
+    <meta property="og:image" content="images/timelineservice.png">
+</head>
+
+<body>
+
+<!--<div class="background-body">-->
+
+<!--</div>-->
+<div style="position: relative; height: 100vh; width: 100%;">
+    <div class="background-header">
+    </div>
+<div class="wrap">
+
+        <div class="header">
+            <h2>Timeline Service</h2>
+            <p>
+                공유하고 싶은 소식을 입력해주세요.
+                24시간이 지난 뒤에는 사라집니다.
+            </p>
+        </div>
+        <div class="area-write" style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); background-color: #ffffff;border-radius: 5px; border: none;">
+            <input type="text" name="member_name" id="title"style="border-radius: 5px;margin-left: 10px ;border: none;height: 30px; width:200px; font-size:15px;"placeholder="제목 입력" >
+                <textarea class="field" placeholder="공유하고 싶은 소식을 입력해주세요" name="contents" id="contents" cols="30"
+                          rows="10"></textarea>
+            <input type="text" name="member_name" id="username"style="border-radius: 5px;margin-left: 10px ;border: none;height: 20px;"placeholder="작성자명 입력" >
+            <input type="password" name="pass" id="password" style="border-radius: 5px;margin-left: 10px ;border: none;height: 20px;" placeholder="비밀번호 입력">
+            <!--            <button class="btn btn-danger" onclick="writePost()">작성하기</button>-->
+            <img src="images/send.png" alt="" onclick="writePost()">
+        </div>
+        <div id="cards-box" class="area-read">
+            <div class="card">
+
+            </div>
+            <!-- 버튼 영역-->
+            <div class="footer">
+                <img id="1-edit" class="icon-start-edit" src="images/edit.png" alt="" onclick="editPost('1')">
+                <img id="1-delete" class="icon-delete" src="images/delete.png" alt="" onclick="deleteOne('1')">
+                <img id="1-submit" class="icon-end-edit" src="images/done.png" alt="" onclick="submitEdit('1')">
+            </div>
+        </div>
+    </div>
+    <div style="position: absolute; z-index: 10;" id="container" class="popup-container">
+        <div class="popup">
+            <button id="close" class="close">
+                X
+            </button>
+            <h1>비밀번호 입력하기</h1>
+            <div>
+                <input type="text" id="setpassword" placeholder="비밀번호">
+            </div>
+            <button class="cta" id="setbutton" onclick="checkPassword()">입력</button>
+        </div>
+    </div>
+    <div style="position: absolute; z-index: 10;" id="container2" class="popup-container">
+    </div>
+</div>
+</body>
+
+</html>
